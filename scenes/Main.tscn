@@ -1,0 +1,417 @@
+[gd_scene format=3 uid="uid://r76v37plfnbu"]
+
+[ext_resource type="Script" uid="uid://dhu2dgllgqmnv" path="res://scripts/MainController.cs" id="1_abc"]
+[ext_resource type="PackedScene" uid="uid://b0t3btfnuwt4r" path="res://scenes/linha_topo.tscn" id="2_0bbpv"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_elqb8"]
+color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+grow_begin = 0.0
+grow_end = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvslj"]
+content_margin_right = 12.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvslj"]
+font_size = 24
+
+[node name="Main" type="Control" unique_id=1649818712 node_paths=PackedStringArray("txtEntrada", "btnGerarSentenca", "btnIniciar", "btnProximoPasso", "btnReiniciar", "tablePilha", "lblResultado")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abc")
+txtEntrada = NodePath("ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada/txtEntrada")
+btnGerarSentenca = NodePath("ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada/btnGerarSentenca")
+btnIniciar = NodePath("ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles/btnIniciar")
+btnProximoPasso = NodePath("ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles/btnProximoPasso")
+btnReiniciar = NodePath("ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles/btnReiniciar")
+tablePilha = NodePath("ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus/tabelaPilha")
+lblResultado = NodePath("ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus/lblResultado")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=852567968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12549, 0.141176, 0.192157, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1985413215]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1484524889]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="LabelTitulo" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1285512710]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.741176, 0.992157, 1)
+theme_override_font_sizes/font_size = 28
+text = "Analisador Sintático Top-Down Preditivo Tabular LL(1)"
+horizontal_alignment = 1
+
+[node name="PanelGramatica" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=2098068092]
+layout_mode = 2
+
+[node name="HBoxInfo" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica" unique_id=684730196]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxRegras" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo" unique_id=1142758183]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras" unique_id=464914422]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Gramática (Regras de Produção):"
+
+[node name="GridRegras" type="GridContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras" unique_id=1773683820]
+layout_mode = 2
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 11
+columns = 2
+
+[node name="L1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1976102035]
+layout_mode = 2
+text = "S"
+
+[node name="L2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=540596870]
+layout_mode = 2
+text = "-> aA | cB"
+
+[node name="L3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=516889585]
+layout_mode = 2
+text = "A"
+
+[node name="L4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1436512721]
+layout_mode = 2
+text = "-> dA | C"
+
+[node name="L5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1017169334]
+layout_mode = 2
+text = "C"
+
+[node name="L6" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=348628886]
+layout_mode = 2
+text = "-> a | b"
+
+[node name="L7" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1974198290]
+layout_mode = 2
+text = "B"
+
+[node name="L8" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1086042193]
+layout_mode = 2
+text = "-> bB | ε"
+
+[node name="VBoxConjuntos" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo" unique_id=824612262]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos" unique_id=2026330617]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Conjuntos FIRST e FOLLOW:"
+
+[node name="GridFF" type="GridContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos" unique_id=1696963054]
+layout_mode = 2
+theme_override_constants/h_separation = 49
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="H1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1984498446]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Símbolo"
+
+[node name="H2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1571257319]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "FIRST"
+
+[node name="H3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=103519979]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "FOLLOW"
+
+[node name="R1C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=838260890]
+layout_mode = 2
+text = "S"
+
+[node name="R1C2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1339021391]
+layout_mode = 2
+text = "{a, c}"
+
+[node name="R1C3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=745432965]
+layout_mode = 2
+text = "{$}"
+
+[node name="R2C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=43762620]
+layout_mode = 2
+text = "A"
+
+[node name="R2C2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1933864439]
+layout_mode = 2
+text = "{d, a, b}"
+
+[node name="R2C3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1119625234]
+layout_mode = 2
+text = "{$}"
+
+[node name="R3C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=594381729]
+layout_mode = 2
+text = "C"
+
+[node name="R3C2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=781626923]
+layout_mode = 2
+text = "{a, b}"
+
+[node name="R3C3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1973749325]
+layout_mode = 2
+text = "{$}"
+
+[node name="R4C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=829302070]
+layout_mode = 2
+text = "B"
+
+[node name="R4C2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=806042692]
+layout_mode = 2
+text = "{b, ε}"
+
+[node name="R4C3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=2050796596]
+layout_mode = 2
+text = "{$}"
+
+[node name="VBoxTabela" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo" unique_id=1574351487]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela" unique_id=745306937]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Tabela de Parsing (M):"
+
+[node name="GridM" type="GridContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela" unique_id=1506080810]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 12
+columns = 6
+
+[node name="H0" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1479056691]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+text = "M"
+
+[node name="H1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1676033413]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+text = "a"
+
+[node name="H2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1328529478]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+text = "b"
+
+[node name="H3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=752651481]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+text = "c"
+
+[node name="H4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1906242953]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+text = "d"
+
+[node name="H5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1446555128]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+text = "$"
+
+[node name="S0" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1780697288]
+layout_mode = 2
+text = "S"
+
+[node name="S1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=2126046018]
+layout_mode = 2
+text = "S->aA"
+
+[node name="S2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=827301810]
+layout_mode = 2
+text = "-"
+
+[node name="S3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=54216668]
+layout_mode = 2
+text = "S->cB"
+
+[node name="S4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1402354810]
+layout_mode = 2
+text = "-"
+
+[node name="S5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1636997331]
+layout_mode = 2
+text = "-"
+
+[node name="A0" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1333044080]
+layout_mode = 2
+text = "A"
+
+[node name="A1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=987391070]
+layout_mode = 2
+text = "A->C"
+
+[node name="A2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=226676659]
+layout_mode = 2
+text = "A->C"
+
+[node name="A3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1612743873]
+layout_mode = 2
+text = "-"
+
+[node name="A4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1980674786]
+layout_mode = 2
+text = "A->dA"
+
+[node name="A5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1256364402]
+layout_mode = 2
+text = "-"
+
+[node name="C0" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1764164462]
+layout_mode = 2
+text = "C"
+
+[node name="C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=50289892]
+layout_mode = 2
+text = "C->a"
+
+[node name="C2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1473654799]
+layout_mode = 2
+text = "C->b"
+
+[node name="C3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=29581683]
+layout_mode = 2
+text = "-"
+
+[node name="C4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=285464269]
+layout_mode = 2
+text = "-"
+
+[node name="C5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=774420351]
+layout_mode = 2
+text = "-"
+
+[node name="B0" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1343487630]
+layout_mode = 2
+text = "B"
+
+[node name="B1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=691454721]
+layout_mode = 2
+text = "-"
+
+[node name="B2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=547494078]
+layout_mode = 2
+text = "B->bB"
+
+[node name="B3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1542232650]
+layout_mode = 2
+text = "-"
+
+[node name="B4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=1322273681]
+layout_mode = 2
+text = "-"
+
+[node name="B5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela/GridM" unique_id=2018677478]
+layout_mode = 2
+text = "B->ε"
+
+[node name="PanelEntrada" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=676828011]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelEntrada" unique_id=1523288418]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxEntrada" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox" unique_id=1784476517]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada" unique_id=1654492063]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Sentença de Entrada:"
+
+[node name="txtEntrada" type="LineEdit" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada" unique_id=1086924459]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Digite a sentença (alfabeto: a, b, c, d)"
+
+[node name="btnGerarSentenca" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada" unique_id=951925580]
+layout_mode = 2
+text = "Gerar Sentença Aleatória"
+
+[node name="HBoxControles" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox" unique_id=265891014]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="btnIniciar" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles" unique_id=1874381549]
+layout_mode = 2
+text = "Iniciar Análise"
+
+[node name="btnProximoPasso" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles" unique_id=1108649225]
+layout_mode = 2
+text = "Próximo Passo (Token a Token)"
+
+[node name="btnReiniciar" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles" unique_id=909816109]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="PanelStatus" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=1869843405]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxStatus" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelStatus" unique_id=1694142056]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="tabelaPilha" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus" unique_id=513861279]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus/tabelaPilha" unique_id=1387907000]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_elqb8")
+
+[node name="LinhaTopo" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus/tabelaPilha" unique_id=484932602 instance=ExtResource("2_0bbpv")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus/tabelaPilha" unique_id=289904445]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_elqb8")
+
+[node name="lblResultado" type="Label" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus" unique_id=996663848]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rvslj")
+label_settings = SubResource("LabelSettings_rvslj")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada/btnGerarSentenca" to="." method="OnBtnGerarSentencaPressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles/btnIniciar" to="." method="OnBtnIniciarPressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles/btnProximoPasso" to="." method="OnBtnProximoPassoPressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles/btnReiniciar" to="." method="OnBtnReiniciarPressed"]

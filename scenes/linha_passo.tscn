@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dsn8elkdel8t3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bbpv"]
+font_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rvslj"]
+color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+grow_begin = 5.0
+grow_end = 5.0
+vertical = true
+
+[node name="linhaPasso" type="HBoxContainer" unique_id=724208599]
+custom_minimum_size = Vector2(0, 38)
+
+[node name="Coluna" type="HBoxContainer" parent="." unique_id=676066839]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="estadoPinha" type="Label" parent="Coluna" unique_id=1896394318]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pilha"
+label_settings = SubResource("LabelSettings_0bbpv")
+
+[node name="VSeparator" type="VSeparator" parent="Coluna" unique_id=1310830717]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rvslj")
+
+[node name="Coluna2" type="HBoxContainer" parent="." unique_id=2140897797]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EstadoEntrada" type="Label" parent="Coluna2" unique_id=1120506942]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pilha"
+label_settings = SubResource("LabelSettings_0bbpv")
+
+[node name="VSeparator" type="VSeparator" parent="Coluna2" unique_id=1020591821]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rvslj")
+
+[node name="Coluna3" type="HBoxContainer" parent="." unique_id=1619982382]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="estadoAcao" type="Label" parent="Coluna3" unique_id=481566601]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pilha"
+label_settings = SubResource("LabelSettings_0bbpv")
