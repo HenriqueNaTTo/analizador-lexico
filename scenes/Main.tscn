@@ -3,6 +3,112 @@
 [ext_resource type="Script" uid="uid://dhu2dgllgqmnv" path="res://scripts/MainController.cs" id="1_abc"]
 [ext_resource type="PackedScene" uid="uid://b0t3btfnuwt4r" path="res://scenes/linha_topo.tscn" id="2_0bbpv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvslj"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bbpv"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rarhs"]
+content_margin_left = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vcsgt"]
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c01mt"]
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxtc6"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlsqs"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8u5g"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhr70"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27740002, 0.48861334, 0.73, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp0k4"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3116, 0.60816675, 0.82, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.27740002, 0.48861334, 0.73, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjd11"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.38039216, 0.7411765, 0.99215686, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27740002, 0.48861334, 0.73, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmy6f"]
+content_margin_left = 0.0
+content_margin_top = 5.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_color = Color(0.2784314, 0.49019608, 0.7294118, 1)
+corner_detail = 5
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_elqb8"]
 color = Color(0.38039216, 0.7411765, 0.99215686, 1)
 grow_begin = 0.0
@@ -12,7 +118,7 @@ grow_end = 0.0
 content_margin_right = 12.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_rvslj"]
-font_size = 24
+font_size = 20
 
 [node name="Main" type="Control" unique_id=1649818712 node_paths=PackedStringArray("txtEntrada", "btnGerarSentenca", "btnIniciar", "btnProximoPasso", "btnReiniciar", "tablePilha", "lblResultado")]
 layout_mode = 3
@@ -62,11 +168,12 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme_override_colors/font_color = Color(0.380392, 0.741176, 0.992157, 1)
 theme_override_font_sizes/font_size = 28
-text = "Analisador Sintático Top-Down Preditivo Tabular LL(1)"
+text = "Analisador Sintático Top-Down Preditivo Tabular"
 horizontal_alignment = 1
 
 [node name="PanelGramatica" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=2098068092]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvslj")
 
 [node name="HBoxInfo" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica" unique_id=684730196]
 layout_mode = 2
@@ -80,7 +187,8 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras" unique_id=464914422]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Gramática (Regras de Produção):"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0bbpv")
+text = "Gramática:"
 
 [node name="GridRegras" type="GridContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras" unique_id=1773683820]
 layout_mode = 2
@@ -90,6 +198,7 @@ columns = 2
 
 [node name="L1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1976102035]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rarhs")
 text = "S"
 
 [node name="L2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=540596870]
@@ -98,6 +207,7 @@ text = "-> aA | cB"
 
 [node name="L3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=516889585]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rarhs")
 text = "A"
 
 [node name="L4" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1436512721]
@@ -106,6 +216,7 @@ text = "-> dA | C"
 
 [node name="L5" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1017169334]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rarhs")
 text = "C"
 
 [node name="L6" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=348628886]
@@ -114,6 +225,7 @@ text = "-> a | b"
 
 [node name="L7" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1974198290]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rarhs")
 text = "B"
 
 [node name="L8" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxRegras/GridRegras" unique_id=1086042193]
@@ -127,6 +239,7 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos" unique_id=2026330617]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vcsgt")
 text = "Conjuntos FIRST e FOLLOW:"
 
 [node name="GridFF" type="GridContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos" unique_id=1696963054]
@@ -137,17 +250,17 @@ columns = 3
 
 [node name="H1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1984498446]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_color = Color(0.47843137, 0.76862746, 0.9607843, 1)
 text = "Símbolo"
 
 [node name="H2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=1571257319]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_color = Color(0.47843137, 0.76862746, 0.9607843, 1)
 text = "FIRST"
 
 [node name="H3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=103519979]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_color = Color(0.47843137, 0.76862746, 0.9607843, 1)
 text = "FOLLOW"
 
 [node name="R1C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=838260890]
@@ -188,14 +301,17 @@ text = "{$}"
 
 [node name="R4C1" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=829302070]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c01mt")
 text = "B"
 
 [node name="R4C2" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=806042692]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c01mt")
 text = "{b, ε}"
 
 [node name="R4C3" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxConjuntos/GridFF" unique_id=2050796596]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c01mt")
 text = "{$}"
 
 [node name="VBoxTabela" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo" unique_id=1574351487]
@@ -205,7 +321,8 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela" unique_id=745306937]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Tabela de Parsing (M):"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vcsgt")
+text = "Tabela de Parsing:"
 
 [node name="GridM" type="GridContainer" parent="ScrollContainer/VBoxContainer/PanelGramatica/HBoxInfo/VBoxTabela" unique_id=1506080810]
 layout_mode = 2
@@ -341,6 +458,7 @@ text = "B->ε"
 
 [node name="PanelEntrada" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=676828011]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nxtc6")
 
 [node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelEntrada" unique_id=1523288418]
 layout_mode = 2
@@ -358,10 +476,18 @@ text = "Sentença de Entrada:"
 [node name="txtEntrada" type="LineEdit" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada" unique_id=1086924459]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_placeholder_color = Color(0.3762, 0.7342501, 0.99, 0.39607844)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlsqs")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_q8u5g")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q8u5g")
 placeholder_text = "Digite a sentença (alfabeto: a, b, c, d)"
 
 [node name="btnGerarSentenca" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxEntrada" unique_id=951925580]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.18239999, 0.32128, 0.48, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lhr70")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wp0k4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wp0k4")
 text = "Gerar Sentença Aleatória"
 
 [node name="HBoxControles" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox" unique_id=265891014]
@@ -371,19 +497,32 @@ alignment = 1
 
 [node name="btnIniciar" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles" unique_id=1874381549]
 layout_mode = 2
-text = "Iniciar Análise"
+theme_override_colors/font_color = Color(0.2, 0.3529412, 0.5176471, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjd11")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wp0k4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wp0k4")
+text = "Iniciar Pilha"
 
 [node name="btnProximoPasso" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles" unique_id=1108649225]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.3529412, 0.5176471, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjd11")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wp0k4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wp0k4")
 text = "Próximo Passo (Token a Token)"
 
 [node name="btnReiniciar" type="Button" parent="ScrollContainer/VBoxContainer/PanelEntrada/VBox/HBoxControles" unique_id=909816109]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.3529412, 0.5176471, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjd11")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wp0k4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wp0k4")
 text = "Reiniciar"
 
 [node name="PanelStatus" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=1869843405]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmy6f")
 
 [node name="VBoxStatus" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/PanelStatus" unique_id=1694142056]
 layout_mode = 2
@@ -403,9 +542,13 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_elqb8")
 
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus" unique_id=362020041]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_elqb8")
+
 [node name="lblResultado" type="Label" parent="ScrollContainer/VBoxContainer/PanelStatus/VBoxStatus" unique_id=996663848]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rvslj")
 label_settings = SubResource("LabelSettings_rvslj")
 horizontal_alignment = 2
