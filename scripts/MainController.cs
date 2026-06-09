@@ -134,7 +134,6 @@ public partial class MainController : Control
 		{
 			foreach (Node child in tablePilha.GetChildren())
 			{
-				// Preserve os separadores e a linha de topo e template do usuário
 				if (child.Name != "LinhaTopo" && child != linhaPassoTemplate && !child.Name.ToString().Contains("Separator"))
 				{
 					child.QueueFree();

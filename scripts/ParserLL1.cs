@@ -62,11 +62,11 @@ public class ParserLL1
 	public string GetStackString()
 	{
 		string[] arr = Stack.ToArray();
-		Array.Reverse(arr); // A base fica no início do array, topo no final
+		Array.Reverse(arr);
 		return "[" + string.Join(", ", arr) + "]";
 	}
 
-	// Retorna a fita de entrada a partir do ponteiro atual
+	// Retorna a fita de entrada
 	public string GetBufferString()
 	{
 		if (Pointer >= Buffer.Length) return "";
@@ -110,7 +110,7 @@ public class ParserLL1
 				return $"ERRO SINTÁTICO: Esperava '{X}', encontrou '{a}'.";
 			}
 		}
-		else // Não-terminal
+		else // Nãoterminal
 		{
 			if (table.TryGetValue((X, a), out string[] production))
 			{
@@ -124,7 +124,7 @@ public class ParserLL1
 				}
 				else
 				{
-					// Empilha na ordem inversa para que o primeiro símbolo da regra fique no topo
+					// Empilha na ordem ao contrario
 					for (int i = production.Length - 1; i >= 0; i--)
 					{
 						Stack.Push(production[i]);
