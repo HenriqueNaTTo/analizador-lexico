@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public partial class MainController : Control
 {
 	private ParserLL1 parser;
+	private int passoCount = 0;
 
 	// UI Nodes
 	[Export] private LineEdit txtEntrada;
@@ -85,6 +86,7 @@ public partial class MainController : Control
 		lblResultado.AddThemeColorOverride("font_color", new Color(1, 1, 1)); // Branco
 		
 		ResetarVisualizacao();
+		passoCount = 0;
 		AdicionarPassoNaTabela("Iniciou a análise.");
 	}
 
@@ -92,6 +94,7 @@ public partial class MainController : Control
 	{
 		if (parser.IsFinished) return;
 
+		passoCount++;
 		string acao = parser.Step();
 		AdicionarPassoNaTabela(acao);
 
@@ -100,12 +103,12 @@ public partial class MainController : Control
 			btnProximoPasso.Disabled = true;
 			if (parser.IsAccepted)
 			{
-				lblResultado.Text = "Sentença reconhecida com sucesso!";
+				lblResultado.Text = $"Sentença aceita em {passoCount} passos!";
 				lblResultado.AddThemeColorOverride("font_color", new Color(0, 1, 0)); // Verde
 			}
 			else
 			{
-				lblResultado.Text = "Erro de Sintaxe: Sentença rejeitada!";
+				lblResultado.Text = $"Erro de Sintaxe: Erro em {passoCount} passos!";
 				lblResultado.AddThemeColorOverride("font_color", new Color(1, 0, 0)); // Vermelho
 			}
 		}
@@ -132,7 +135,7 @@ public partial class MainController : Control
 			foreach (Node child in tablePilha.GetChildren())
 			{
 				// Preserve os separadores e a linha de topo e template do usuário
-				if (child.Name != "LinhaTopo" && child.Name != "linhaPasso" && !child.Name.ToString().Contains("Separator"))
+				if (child.Name != "LinhaTopo" && child != linhaPassoTemplate && !child.Name.ToString().Contains("Separator"))
 				{
 					child.QueueFree();
 				}

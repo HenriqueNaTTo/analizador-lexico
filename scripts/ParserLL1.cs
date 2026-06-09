@@ -81,7 +81,7 @@ public class ParserLL1
 		if (Stack.Count == 0)
 		{
 			IsFinished = true;
-			return "Erro: Pilha vazia antes do término.";
+			return "Erro: Pilha vazia.";
 		}
 
 		string X = Stack.Peek();
@@ -92,7 +92,7 @@ public class ParserLL1
 			Stack.Pop();
 			IsFinished = true;
 			IsAccepted = true;
-			return "ACEITO: Símbolo $ final alcançado na pilha e fita.";
+			return "ACEITO: $ final alcançado.";
 		}
 
 		if (IsTerminal(X) || X == "$")
@@ -101,7 +101,7 @@ public class ParserLL1
 			{
 				Stack.Pop();
 				Pointer++;
-				return $"'{X}' confere. Avança fita e desempilha.";
+				return $"Empilha '{X}'.";
 			}
 			else
 			{

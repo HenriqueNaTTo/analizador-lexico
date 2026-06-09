@@ -25,6 +25,10 @@ window/stretch/aspect="ignore"
 
 project/assembly_name="analizador-lexico"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
